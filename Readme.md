@@ -1,3 +1,0 @@
-# EKS-terraform-workshop
-
-### Architecture
