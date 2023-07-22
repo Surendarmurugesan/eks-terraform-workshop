@@ -1,5 +1,6 @@
 locals {
   vpc_cidr_range = "10.1.0.0/16"
+  # vpc_cidr_range = lookup(var.aws_cidr, var.aws_vpc[count.index])
 }
 
 resource "aws_vpc" "vpc-10-1" {
@@ -23,7 +24,7 @@ resource "aws_eip" "my-eip" {
 resource "aws_subnet" "mypubsubnet" {
   assign_ipv6_address_on_creation = false
   availability_zone               = "eu-north-1a"
-  cidr_block = cidrsubnet(local.vpc_cidr_range, 8, 1)
+  cidr_block = cidrsubnet(aws_vpc.vpc-10-1.cidr_block, 8, 1)
   # cidr_block                      = "10.1.1.0/24"
   map_public_ip_on_launch         = false
   tags = {
