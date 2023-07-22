@@ -1,3 +1,3 @@
-# EKS Terraform workshop
+# EKS-terraform-workshop
 
 ### Architecture
