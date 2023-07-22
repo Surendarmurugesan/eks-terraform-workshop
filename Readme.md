@@ -1,0 +1,3 @@
+# EKS Terraform workshop
+
+### Architecture
