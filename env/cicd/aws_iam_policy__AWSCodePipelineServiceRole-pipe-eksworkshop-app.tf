@@ -2,7 +2,7 @@
 # aws_iam_policy.AWSCodePipelineServiceRole-pipe-eksworkshop-app:
 resource "aws_iam_policy" "AWSCodePipelineServiceRole-pipe-eksworkshop-app" {
   description = "Policy used in trust relationship with CodePipeline"
-  name        = format("%s-AWSCodePipelineServiceRole-pipe-eksworkshop-app",data.aws_ssm_parameter.tf-eks-id.value)
+  name        = format("%s-AWSCodePipelineServiceRole-pipe-eksworkshop-app", data.aws_ssm_parameter.tf-eks-id.value)
   path        = "/service-role/"
   policy = jsonencode(
     {
